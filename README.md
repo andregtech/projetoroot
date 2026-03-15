@@ -4,7 +4,7 @@
 - Este é um projeto backend desenvolvido com Node.js e Express no VScode, utilizando PostgreSQL como banco de dados, possui o objetivo de fazer o gerenciamento de usuários, produtos e categorias. Inclui funcionalidades de autenticação via JWT, permitindo operações CRUD (Criar, Ler, Atualizar e Deletar).
 
 ## 🚀 Visualização
-Para visualizar o projeto em funcionamento, execute o servidor localmente. O servidor roda na porta padrão (geralmente 3000, 3001 ou conforme configurado no .env).
+- Para visualizar o projeto em funcionamento, execute o servidor localmente. O servidor roda na porta padrão (geralmente 3000, 3001 ou conforme configurado no .env).
 
 ## ✨ Funcionalidades
 - Autenticação de Usuários: Login e registro com JWT
@@ -51,7 +51,7 @@ Para executar este projeto localmente:
 - Abra no navegador para visualizar a aplicação com o localhost configurado no VS.
 
 ## 👨‍💻 Identificação
-- Este Projeto foi desenvolvido por **André Willamy Dos Santos Moraes** - Aluno do Curso Full Stack - Geração Tech 3.0
+- Este Projeto foi desenvolvido por **André Willamy Dos Santos Moraes** - Aluno Full Stack - Geração Tech 3.0
 
 ## ⚖️ Licença
 - Este projeto foi desenvolvido em março de 2026, exclusivamente para fins educacionais como parte dos requisitos obrigatórios da **Geração Tech 3.0**.
