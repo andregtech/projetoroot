@@ -28,25 +28,25 @@ Para visualizar o projeto em funcionamento, execute o servidor localmente. O ser
 Para executar este projeto localmente:
 - Clone o repositório (se aplicável) ou navegue até a pasta do projeto.
 - Instale as dependências:
-    npm init -y
-    npm install
-    npm install express
-    npm install dotenv
-    npm install sequelize
-    npm install jsonwebtoken
-    npm install bcryptjs
-    npm install cors
-    npm install --save-dev nodemon sequelize-cli
+    - npm init -y
+    - npm install
+    - npm install express
+    - npm install dotenv
+    - npm install sequelize
+    - npm install jsonwebtoken
+    - npm install bcryptjs
+    - npm install cors
+    - npm install --save-dev nodemon sequelize-cli
 - Configure o banco de dados: Certifique-se de ter PostgreSQL instalado e rodando. Depois configure as variáveis de ambiente no arquivo .env (exemplo: DATABASE_URL, JWT_SECRET, etc.):
-    PORT=3001
-    JWT_SECRET=(sua-chave-secreta)
-    JWT_EXPIRES_IN=1d
-    DB_HOST=(host-do-banco)
-    DB_USER=(usuario-do-banco)
-    DB_PASSWORD=(senha-do-banco)
-    DB_NAME=(nome-do-banco)
-    DB_PORT=5432
-    DB_DIALECT=postgres
+    - PORT=3001
+    - JWT_SECRET=(sua-chave-secreta)
+    - JWT_EXPIRES_IN=1d
+    - DB_HOST=(host-do-banco)
+    - DB_USER=(usuario-do-banco)
+    - DB_PASSWORD=(senha-do-banco)
+    - DB_NAME=(nome-do-banco)
+    - DB_PORT=5432
+    - DB_DIALECT=postgres
 - Inicie o servidor no terminal: npm run dev (o terminal utilizado no projeto foi o bash no VScode)
 - Abra no navegador para visualizar a aplicação com o localhost configurado no VS.
 
