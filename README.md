@@ -56,7 +56,7 @@ Para executar este projeto localmente:
 - Para visualizar, com o localhost configurado, o servidor conectado com sucesso e o banco de dados sincronizado com sucesso localmente no terminal, no navegador acesse: http://localhost:3001/v1/categoria/pesquisa
 
 ## 📄 Documentação SWAGGER
-- Além da documentação Readmer, o projeto contém uma documentação Swagger UI, com o objetivo de tornar o CRUD melhor de ser entendido. Através da apresentação na interface interativa da Swagger, é possível visualizar todas as rotas disponíveis e os parâmetros necessários
+- Além da documentação Readme, o projeto contém uma documentação Swagger UI, com o objetivo de tornar o CRUD melhor de ser entendido. Através da apresentação na interface interativa da Swagger, é possível visualizar todas as rotas disponíveis e os parâmetros necessários
 - A estrutura utiliza o padrão de asteriscos laterais (*) para garantir a compatibilidade de leitura em diferentes sistemas operacionais e editores de código, evitando erros de caracteres invisíveis
 - Para visualizar, com o servidor conectado com sucesso e o banco de dados sincronizado com sucesso localmente no terminal, no navegador acesse: http://localhost:3001/api-docs
 
@@ -71,5 +71,5 @@ para garantir que
 - Este Projeto foi desenvolvido por **André Willamy Dos Santos Moraes** - Aluno Full Stack - Geração Tech 3.0
 
 ## ⚖️ Licença
-- Este projeto foi desenvolvido em março de 2026, exclusivamente para fins educacionais como parte dos requisitos obrigatórios da **Geração Tech 3.0**.
+- Este projeto foi desenvolvido em março de 2026, exclusivamente para fins educacionais como parte dos requisitos obrigatórios da **Geração Tech 3.0**
 - A permissão de uso e avaliação é restrita à equipe docente e de monitoria, sob orientação de **Nazaré Almeida**, visando a validação de competências em Back-end para a obtenção do título no curso **Full Stack**
