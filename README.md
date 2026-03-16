@@ -14,7 +14,7 @@
 - Middleware de Autenticação: Proteção de rotas sensíveis (arquivo auth.js)
 
 ## 🛠️ Tecnologias Utilizadas
-- Node.js v24.14.0
+- Node.js - v24.14.0
 - Express
 - PostgreSQL
 - Sequelize
@@ -63,9 +63,10 @@ acesse: http://localhost:3001/v1/categoria/pesquisa
 acesse: http://localhost:3001/api-docs
 
 ## 🧠 O Desafio da Indentação SWAGGER
-- Durante o desenvolvimento, foi aplicada uma estrutura de indentação manual rigorosa nos arquivos de rotas, para garantir que
+- Durante o desenvolvimento, foi aplicada uma estrutura de indentação manual rigorosa nos arquivos de rotas,  
+para garantir que
     - As rotas sejam detectadas corretamente pelo compilador
-    - Os métodos GRUD estejam hierarquicamente organizados, seguindo e respeitando o padrão de sequência técnica e a ordem de visualização comum no Swagger: Create (POST), Read (GET), Update (PUT ou PATCH) e Delete (DELETE)
+    - Os métodos GRUD estejam hierarquicamente organizados, respeitando o padrão da sequência técnica e a ordem de visualização comum no Swagger: Create (POST), Read (GET), Update (PUT ou PATCH) e Delete (DELETE)
     - O esquema de segurança Bearer Auth (JWT) seja aplicado corretamente em rotas protegidas
 
 ## 👨‍💻 Identificação
