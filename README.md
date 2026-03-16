@@ -30,7 +30,7 @@
 
 ## 📦 Instalação
 Para executar este projeto localmente:
-- Clone o repositório (se aplicável) ou navegue até a pasta do projeto.
+- Clone o repositório (se aplicável) ou navegue até a pasta do projeto
 - Instale as dependências:
     - npm init -y
     - npm install
@@ -57,8 +57,8 @@ Para executar este projeto localmente:
 acesse: http://localhost:3001/v1/categoria/pesquisa
 
 ## 📄 Documentação SWAGGER
-- Além da documentação Readmer, o projeto contém uma documentação Swagger UI, com o objetivo de tornar o CRUD melhor de ser entendido. Através da apresentação na interface interativa da Swagger, é possível visualizar todas as rotas disponíveis e os parâmetros necessários.
-- A estrutura utiliza o padrão de asteriscos laterais (*) para garantir a compatibilidade de leitura em diferentes sistemas operacionais e editores de código, evitando erros de caracteres invisíveis.
+- Além da documentação Readmer, o projeto contém uma documentação Swagger UI, com o objetivo de tornar o CRUD melhor de ser entendido. Através da apresentação na interface interativa da Swagger, é possível visualizar todas as rotas disponíveis e os parâmetros necessários
+- A estrutura utiliza o padrão de asteriscos laterais (*) para garantir a compatibilidade de leitura em diferentes sistemas operacionais e editores de código, evitando erros de caracteres invisíveis
 - Para visualizar, com o servidor conectado com sucesso localmente no terminal,  
 acesse: http://localhost:3001/api-docs
 
@@ -66,7 +66,7 @@ acesse: http://localhost:3001/api-docs
 - Durante o desenvolvimento, foi aplicada uma estrutura de indentação manual rigorosa nos arquivos de rotas,  
 para garantir que
     - As rotas sejam detectadas corretamente pelo compilador
-    - Os métodos GRUD estejam hierarquicamente organizados, respeitando o padrão da sequência técnica e a ordem de visualização comum no Swagger: Create (POST), Read (GET), Update (PUT ou PATCH) e Delete (DELETE)
+    - Os métodos GRUD estejam hierarquicamente organizados, respeitando o padrão da sequência técnica e a ordem de visualização no Swagger: Create (POST), Read (GET), Update (PUT ou PATCH) e Delete (DELETE)
     - O esquema de segurança Bearer Auth (JWT) seja aplicado corretamente em rotas protegidas
 
 ## 👨‍💻 Identificação
