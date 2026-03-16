@@ -1,7 +1,7 @@
 # ⚙️ PROJETO ROOT
 
 ## 🔗 Sobre
-- Este é um projeto backend desenvolvido com Node.js e Express no VScode, utilizando PostgreSQL como banco de dados, possui o objetivo de fazer o gerenciamento de usuários, produtos e categorias. Inclui funcionalidades de autenticação via JWT, permitindo operações CRUD (Criar, Ler, Atualizar e Deletar)
+- Este é um projeto backend desenvolvido com Node.js e Express no VScode, utilizando SQL como banco de dados, possui o objetivo de fazer o gerenciamento de usuários, produtos e categorias. Inclui funcionalidades de autenticação via JWT, permitindo operações CRUD (Criar, Ler, Atualizar e Deletar)
 
 ## 🚀 Visualização
 - Para visualizar o projeto em funcionamento, execute o servidor localmente. O servidor roda na porta padrão (geralmente 3000, 3001 ou conforme configurado no .env)
@@ -16,7 +16,7 @@
 ## 🛠️ Tecnologias Utilizadas
 - Node.js - v24.14.0
 - Express
-- PostgreSQL
+- Postgre SQL
 - Sequelize
 - JWT (jsonwebtoken)
 - CORS

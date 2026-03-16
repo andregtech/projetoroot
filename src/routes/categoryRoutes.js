@@ -6,97 +6,176 @@ const router = Router();
 
 /**
  * @swagger
- * /v1/categoria:
+ * /categoria:
  *   post:
- *     summary: Cria uma nova categoria
- *     tags: [Categories]
  *     security:
  *       - bearerAuth: []
+ *     tags:
+ *       - Categorias
+ *     summary: 'Cria uma nova categoria.'
+ *     description: 'Cadastra uma nova categoria no sistema. Requer autenticação.'
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               nome:
+ *                 type: string
+ *                 example: 'Calçados'
+ *               slug:
+ *                 type: string
+ *                 example: 'calcados'
+ *               use_in_menu:
+ *                 type: boolean
+ *                 example: true
  *     responses:
- *       201:
- *         description: Categoria criada com sucesso
- *       401:
- *         description: Não autorizado
+ *       '201':
+ *         description: 'Categoria criada com sucesso.'
+ *       '400':
+ *         description: 'Dados inválidos (ex: slug duplicado).'
+ *       '401':
+ *         description: 'Não autorizado. Token inválido ou não fornecido.'
  */
 router.post('/', authMiddleware, categoryController.create);
 
 /**
  * @swagger
- * /v1/categoria/pesquisa:
+ * tags:
+ *   name: Categorias
+ *   description: API para gerenciamento de categorias de produtos.
+ */
+
+/**
+ * @swagger
+ * /categoria/pesquisa:
  *   get:
- *     summary: Pesquisa categorias
- *     tags: [Categories]
+ *     tags:
+ *       - Categorias
+ *     summary: 'Busca por categorias.'
+ *     description: 'Retorna uma lista paginada de categorias, com opções de filtro.'
+ *     parameters:
+ *       - in: query
+ *         name: limit
+ *         schema:
+ *           type: integer
+ *           default: 12
+ *         description: 'Número de itens por página. Use -1 para retornar todos.'
+ *       - in: query
+ *         name: page
+ *         schema:
+ *           type: integer
+ *           default: 1
+ *         description: 'O número da página a ser retornada.'
+ *       - in: query
+ *         name: fields
+ *         schema:
+ *           type: string
+ *         description: 'Campos a serem retornados, separados por vírgula (ex: nome,slug).'
+ *       - in: query
+ *         name: use_in_menu
+ *         schema:
+ *           type: boolean
+ *         description: 'Filtrar por categorias que devem ser exibidas no menu.'
  *     responses:
- *       200:
- *         description: Sucesso
+ *       '200':
+ *         description: 'Lista de categorias encontrada.'
+ *       '400':
+ *         description: 'Falha na busca.'
  */
 router.get('/pesquisa', categoryController.search);
 
 /**
  * @swagger
- * /v1/categoria/{id}:
+ * /categoria/{id}:
  *   get:
- *     summary: Busca categoria por ID
- *     tags: [Categories]
+ *     tags:
+ *       - Categorias
+ *     summary: 'Busca uma categoria pelo seu ID.'
+ *     description: 'Retorna os detalhes de uma categoria específica.'
  *     parameters:
  *       - in: path
  *         name: id
  *         required: true
  *         schema:
- *           type: string
+ *           type: integer
+ *         description: 'O ID da categoria a ser buscada.'
  *     responses:
- *       200:
- *         description: Sucesso
+ *       '200':
+ *         description: 'Sucesso. Retorna os dados da categoria.'
+ *       '404':
+ *         description: 'Categoria não encontrada.'
  */
 router.get('/:id', categoryController.getById);
 
 /**
  * @swagger
- * /v1/categoria/{id}:
+ * /categoria/{id}:
  *   put:
- *     summary: Atualiza uma categoria
- *     tags: [Categories]
  *     security:
  *       - bearerAuth: []
+ *     tags:
+ *       - Categorias
+ *     summary: 'Atualiza uma categoria existente.'
+ *     description: 'Atualiza os dados de uma categoria. Requer autenticação.'
  *     parameters:
  *       - in: path
  *         name: id
  *         required: true
  *         schema:
- *           type: string
- *         description: ID da categoria
+ *           type: integer
+ *         description: 'O ID da categoria a ser atualizada.'
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               nome:
+ *                 type: string
+ *                 example: 'Calçados e Acessórios'
+ *               slug:
+ *                 type: string
+ *                 example: 'calcados-e-acessorios'
+ *               use_in_menu:
+ *                 type: boolean
+ *                 example: false
  *     responses:
- *       200:
- *         description: Categoria atualizada com sucesso
- *       401:
- *         description: Não autorizado
- *       404:
- *         description: Categoria não encontrada
+ *       '204':
+ *         description: 'Categoria atualizada com sucesso.'
+ *       '401':
+ *         description: 'Não autorizado. Token inválido ou não fornecido.'
+ *       '404':
+ *         description: 'Categoria não encontrada.'
  */
 router.put('/:id', authMiddleware, categoryController.update);
 
 /**
  * @swagger
- * /v1/categoria/{id}:
+ * /categoria/{id}:
  *   delete:
- *     summary: Remove uma categoria
- *     tags: [Categories]
  *     security:
  *       - bearerAuth: []
+ *     tags:
+ *       - Categorias
+ *     summary: 'Deleta uma categoria.'
+ *     description: 'Remove uma categoria do banco de dados. Requer autenticação.'
  *     parameters:
  *       - in: path
  *         name: id
  *         required: true
  *         schema:
- *           type: string
- *         description: ID da categoria a ser removida
+ *           type: integer
+ *         description: 'O ID da categoria a ser deletada.'
  *     responses:
- *       200:
- *         description: Categoria removida com sucesso
- *       401:
- *         description: Não autorizado
- *       404:
- *         description: Categoria não encontrada
+ *       '204':
+ *         description: 'Categoria deletada com sucesso.'
+ *       '401':
+ *         description: 'Não autorizado. Token inválido ou não fornecido.'
+ *       '404':
+ *         description: 'Categoria não encontrada.'
  */
 router.delete('/:id', authMiddleware, categoryController.delete);
 
