@@ -53,13 +53,12 @@ Para executar este projeto localmente:
     - DB_PORT=5432
     - DB_DIALECT=postgres
 - Inicie o servidor no terminal: npm run dev (o terminal utilizado no projeto foi o bash no VScode)
-- Para visualizar no navegador a aplicação com o localhost já configurado no VScode,  
-acesse: http://localhost:3001/v1/categoria/pesquisa
+- Para visualizar, com o localhost configurado, o servidor conectado com sucesso e o banco de dados sincronizado com sucesso localmente no terminal, no navegador acesse: http://localhost:3001/v1/categoria/pesquisa
 
 ## 📄 Documentação SWAGGER
 - Além da documentação Readmer, o projeto contém uma documentação Swagger UI, com o objetivo de tornar o CRUD melhor de ser entendido. Através da apresentação na interface interativa da Swagger, é possível visualizar todas as rotas disponíveis e os parâmetros necessários
 - A estrutura utiliza o padrão de asteriscos laterais (*) para garantir a compatibilidade de leitura em diferentes sistemas operacionais e editores de código, evitando erros de caracteres invisíveis
-- Para visualizar, com o servidor conectado com sucesso e o banco de dados sincronizado com sucesso localmente no terminal, acesse: http://localhost:3001/api-docs
+- Para visualizar, com o servidor conectado com sucesso e o banco de dados sincronizado com sucesso localmente no terminal, no navegador acesse: http://localhost:3001/api-docs
 
 ## 🧠 O Desafio da Indentação SWAGGER
 - Durante o desenvolvimento, foi aplicada uma estrutura de indentação manual rigorosa nos arquivos de rotas,  
