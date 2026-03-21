@@ -1,11 +1,11 @@
 const request = require('supertest');
 const app = require('../src/app');
 const { sequelize } = require('../src/models/User');
-const Product = require('../src/models/Product'); // Importamos o modelo para buscar o ID
+const Product = require('../src/models/Product');
 
 let token;
 let categoryId;
-let productId; // Vamos definir o productId no escopo principal
+let productId;
 
 beforeAll(async () => {
   await sequelize.sync({ force: true });
@@ -20,7 +20,6 @@ beforeAll(async () => {
   });
   token = tokenRes.body.token;
 
-  // Cria uma categoria para poder associar ao produto
   await request(app).post('/v1/categoria').set('Authorization', `Bearer ${token}`)
     .send({ nome: 'Calçados', slug: 'calcados' });
   
@@ -58,16 +57,13 @@ describe('Product API', () => {
     
     expect(res.statusCode).toEqual(201);
     
-    // **CORREÇÃO IMPORTANTE:** Após criar, buscamos o ID diretamente no banco
-    // para garantir que o temos para os próximos testes, sem depender de buscas.
     const createdProduct = await Product.findOne({ where: { slug: testProduct.slug } });
     expect(createdProduct).toBeDefined();
-    productId = createdProduct.id; // Salvamos o ID na variável global do teste
+    productId = createdProduct.id;
   });
   
   it('should get the created product by ID', async () => {
-    // Agora usamos o productId que garantimos ter no teste anterior
-    expect(productId).toBeDefined(); // Garante que o teste anterior funcionou
+    expect(productId).toBeDefined();
 
     const res = await request(app).get(`/v1/produto/${productId}`);
     
@@ -78,10 +74,9 @@ describe('Product API', () => {
   });
 
   it('should update a product and its associations', async () => {
-    // Usamos o productId novamente
+
     expect(productId).toBeDefined(); 
 
-    // Primeiro, pegamos os dados atuais do produto para saber o ID da opção
     const currentProduct = await request(app).get(`/v1/produto/${productId}`);
     const firstOptionId = currentProduct.body.options[0].id;
 
@@ -89,8 +84,8 @@ describe('Product API', () => {
       preco: 289.90,
       stock: 45,
       options: [
-        { id: firstOptionId, deleted: true }, // Deleta a opção de Cor
-        { title: "Material", type: "texto", values: ["Sintético"] } // Adiciona uma nova opção
+        { id: firstOptionId, deleted: true },
+        { title: "Material", type: "texto", values: ["Sintético"] }
       ]
     };
 
@@ -101,10 +96,9 @@ describe('Product API', () => {
 
     expect(res.statusCode).toEqual(204);
 
-    // Verifica se a atualização funcionou
     const updatedProduct = await request(app).get(`/v1/produto/${productId}`);
     expect(updatedProduct.body.preco).toBe(289.90);
-    expect(updatedProduct.body.options.length).toBe(2); // Deletou 1, adicionou 1
+    expect(updatedProduct.body.options.length).toBe(2);
     expect(updatedProduct.body.options.find(opt => opt.titulo === 'Material')).toBeDefined();
   });
 });

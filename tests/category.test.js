@@ -52,7 +52,7 @@ describe('Category API', () => {
       .post('/v1/categoria')
       .send(testCategory);
     
-    expect(res.statusCode).toEqual(400); // O middleware está retornando 400 para token ausente
+    expect(res.statusCode).toEqual(400);
   });
   
   it('should get a list of categories', async () => {
@@ -61,7 +61,7 @@ describe('Category API', () => {
     expect(res.statusCode).toEqual(200);
     expect(res.body.data).toBeInstanceOf(Array);
     expect(res.body.data[0].nome).toBe(testCategory.nome);
-    categoryId = res.body.data[0].id; // Salva o ID para os próximos testes
+    categoryId = res.body.data[0].id;
   });
 
   it('should get a category by ID', async () => {
