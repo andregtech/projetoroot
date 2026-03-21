@@ -29,6 +29,19 @@
     - Swagger JSDoc
     - YAML/OpenAPI
   
+## 📂 Estrutura do Projeto
+src/  
+├── app.js (Configuração principal do Express)  
+├── server.js (Inicialização do servidor)  
+├── config/  
+│   └── database.js (Configuração do banco de dados)  
+├── controllers/ (Controladores da aplicação)  
+├── services/ (Regras de negócio)  
+├── models/ (Modelos do Sequelize)  
+├── database/ (Inicialização do ORM)  
+├── routes/ (Definição das rotas)  
+├── middleware/ (Middlewares (ex: autenticação))
+  
 ## 📦 Instalação
 Para executar este projeto localmente:
 - Clone o repositório (se aplicável)
@@ -72,19 +85,6 @@ npm run dev
 ```
 - Para visualizar, com o localhost configurado, o servidor conectado com sucesso e o banco de dados sincronizado com sucesso localmente no terminal, no navegador acesse:  
 http://localhost:3001/v1/categoria/pesquisa
-  
-## 📂 Estrutura do Projeto
-src/  
-├── app.js (Configuração principal do Express)  
-├── server.js (Inicialização do servidor)  
-├── config/  
-│   └── database.js (Configuração do banco de dados)  
-├── controllers/ (Controladores da aplicação)  
-├── services/ (Regras de negócio)  
-├── models/ (Modelos do Sequelize)  
-├── database/ (Inicialização do ORM)  
-├── routes/ (Definição das rotas)  
-├── middleware/ (Middlewares (ex: autenticação))
   
 ## 📄 Documentação API SWAGGER
 - Além da documentação Readme, o projeto contém uma documentação Swagger UI, com o objetivo de tornar o CRUD melhor de ser entendido. Através da apresentação na interface interativa da Swagger, é possível visualizar todas as rotas disponíveis e os parâmetros necessários
