@@ -16,13 +16,14 @@
 ## 🛠️ Tecnologias Utilizadas
 - Node.js - v24.14.0
 - Express
-- Postgre SQL
-- Sequelize
+- PostgreSQL
+- Sequelize ORM
 - JWT (jsonwebtoken)
 - CORS
 - Nodemon
 - Dotenv
-- Bcryptjs
+- Bcrypt
+- Jest e Supertest
 - Documentação SWAGGER
     - Swagger UI Express
     - Swagger JSDoc
@@ -30,7 +31,12 @@
 
 ## 📦 Instalação
 Para executar este projeto localmente:
-- Clone o repositório (se aplicável) ou navegue até a pasta do projeto
+- Clone o repositório (se aplicável)
+```bash
+git clone <url-do-repositorio>
+cd project-root
+```
+ou navegue até a pasta do projeto.
 - Instale as dependências:
     - npm init -y
     - npm install
@@ -42,6 +48,8 @@ Para executar este projeto localmente:
     - npm install cors
     - npm install --save-dev nodemon sequelize-cli
     - npm install swagger-ui-express swagger-jsdoc
+
+## 🌐 Configuração
 - Configure o banco de dados: Certifique-se de ter PostgreSQL instalado e rodando. Depois configure as variáveis de ambiente no arquivo .env (exemplo: DATABASE_URL, JWT_SECRET, etc.):
     - PORT=3001
     - JWT_SECRET=(sua-chave-secreta)
@@ -52,10 +60,35 @@ Para executar este projeto localmente:
     - DB_NAME=(nome-do-banco)
     - DB_PORT=5432
     - DB_DIALECT=postgres
-- Inicie o servidor no terminal: npm run dev (o terminal utilizado no projeto foi o bash no VScode)
-- Para visualizar, com o localhost configurado, o servidor conectado com sucesso e o banco de dados sincronizado com sucesso localmente no terminal, no navegador acesse: http://localhost:3001/v1/categoria/pesquisa
+- Execute as migrações (caso utilize sequelize-cli):
+```bash
+npx sequelize-cli db:migrate
+```
 
-## 📄 Documentação SWAGGER
+## ▶️ Execução
+- Inicie o servidor no terminal (o terminal utilizado no projeto foi o bash no VScode):
+```bash
+npm run dev
+```
+- Para visualizar, com o localhost configurado, o servidor conectado com sucesso e o banco de dados sincronizado com sucesso localmente no terminal, no navegador acesse:  
+http://localhost:3000/  
+ou  
+http://localhost:3001/v1/categoria/pesquisa
+
+## 📂 Estrutura do Projeto
+src/  
+├── app.js (Configuração principal do Express)  
+├── server.js (Inicialização do servidor)  
+├── config/  
+│   └── database.js (Configuração do banco de dados)  
+├── controllers/ (Controladores da aplicação)  
+├── services/ (Regras de negócio)  
+├── models/ (Modelos do Sequelize)  
+├── database/ (Inicialização do ORM)  
+├── routes/ (Definição das rotas)  
+├── middleware/ (Middlewares (ex: autenticação))
+
+## 📄 Documentação API SWAGGER
 - Além da documentação Readme, o projeto contém uma documentação Swagger UI, com o objetivo de tornar o CRUD melhor de ser entendido. Através da apresentação na interface interativa da Swagger, é possível visualizar todas as rotas disponíveis e os parâmetros necessários
 - A estrutura utiliza o padrão de asteriscos laterais (*) para garantir a compatibilidade de leitura em diferentes sistemas operacionais e editores de código, evitando erros de caracteres invisíveis
 - Para visualizar, com o servidor conectado com sucesso e o banco de dados sincronizado com sucesso localmente no terminal, no navegador acesse: http://localhost:3001/api-docs
@@ -66,6 +99,28 @@ para garantir que
     - As rotas sejam detectadas corretamente pelo compilador
     - Os métodos GRUD estejam hierarquicamente organizados, respeitando o padrão da sequência técnica e a ordem de visualização no Swagger: Create (POST), Read (GET), Update (PUT ou PATCH) e Delete (DELETE)
     - O esquema de segurança Bearer Auth (JWT) seja aplicado corretamente em rotas protegidas
+
+## 📝 Exemplos de Uso da API
+
+**Autenticação**
+
+POST /login
+
+Exemplo de payload:
+
+{ "email": "usuario@email.com", "password": "senha" }
+
+Resposta:
+
+{ "token": "jwt_token_aqui" }
+
+Exemplo de rota protegida GET /products Authorization: Bearer
+
+## 🔬 Testes
+Para executar os testes:
+```bash
+npm test
+```
 
 ## 👨‍💻 Identificação
 - Este Projeto foi desenvolvido por **André Willamy Dos Santos Moraes** - Aluno Full Stack - Geração Tech 3.0
