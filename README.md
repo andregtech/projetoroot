@@ -50,24 +50,21 @@ git clone https://github.com/andregtech/projetoroot
 ```
 - Instale as dependências:
 ```bash
+npm init -y
 npm install
+npm install express
+npm install dotenv
+npm install sequelize
+npm install jsonwebtoken
+npm install bcryptjs
+npm install cors
+npm install --save-dev nodemon sequelize-cli
+npm install swagger-ui-express swagger-jsdoc
 ```
 - Entre na pasta do projeto:
 ```bash
 cd project-root
 ```
-
-- Instale as dependências:
-    - npm init -y
-    - npm install
-    - npm install express
-    - npm install dotenv
-    - npm install sequelize
-    - npm install jsonwebtoken
-    - npm install bcryptjs
-    - npm install cors
-    - npm install --save-dev nodemon sequelize-cli
-    - npm install swagger-ui-express swagger-jsdoc
   
 ## 🌐 Configuração
 - Configure o banco de dados: Certifique-se de ter PostgreSQL instalado e rodando. Depois configure as variáveis de ambiente no arquivo .env (exemplo: DATABASE_URL, JWT_SECRET, etc.):
