@@ -87,7 +87,7 @@ npx sequelize-cli db:migrate
 ```bash
 npm run dev
 ```
-- Para visualizar, com o localhost configurado, o servidor conectado com sucesso e o banco de dados sincronizado com sucesso localmente no terminal, no navegador acesse:  
+- Com o localhost configurado, o servidor conectado com sucesso e o banco de dados sincronizado com sucesso localmente no terminal, para visualizar a aplicação no navegador, acesse:  
 http://localhost:3001/v1/categoria/pesquisa
   
 ## 📄 Documentação API SWAGGER
