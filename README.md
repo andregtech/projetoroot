@@ -43,7 +43,6 @@ src/
 ├── middleware/ (Middlewares (ex: autenticação))
   
 ## 📦 Instalação
-Para executar este projeto localmente:
 - Clone o repositório (se aplicável):
 ```bash
 git clone https://github.com/andregtech/projetoroot
