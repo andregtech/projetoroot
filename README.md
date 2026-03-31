@@ -44,12 +44,19 @@ src/
   
 ## 📦 Instalação
 Para executar este projeto localmente:
-- Clone o repositório (se aplicável)
+- Clone o repositório (se aplicável):
 ```bash
-git clone <url-do-repositorio>
+git clone https://github.com/andregtech/projetoroot
+```
+- Instale as dependências:
+```bash
+npm install
+```
+- Entre na pasta do projeto:
+```bash
 cd project-root
 ```
-ou navegue até a pasta do projeto.
+
 - Instale as dependências:
     - npm init -y
     - npm install
